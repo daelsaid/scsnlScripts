@@ -1,0 +1,220 @@
+#!/bin/bash
+
+#Sun Grid Engine configuration options
+#shell name
+#$ -S /bin/bash
+#write .e and .o to the working directory
+#$ -cwd
+#merge stdout and stderr
+#$ -j y
+#import environment variables
+#$ -V
+
+
+##################################################
+# create an entity (if missing) on remote server.
+# input 1: PUT/GET path to create/query
+# input 2: error message
+# global 1: JSESSION
+# global 2: server
+function createEntity
+{
+#set -x
+	remote=$1
+	notFound=$2	
+	res=`XNATRestClient -user_session ${JSESSION} -host $server -m GET -remote "$remote" | grep "${notFound}"`
+	if [ -n "$res"	]; then
+		echo "$remote not found"
+		res=`XNATRestClient -user_session ${JSESSION} -host $server -m PUT -remote "$remote"`
+		res=`XNATRestClient -user_session ${JSESSION} -host $server -m GET -remote "$remote" | grep "${notFound}"`
+		if [ -n "$res" ]; then
+			echo "Failed to create: $remote, exiting"
+			exit -1
+		fi
+	fi
+#set +x	
+}
+
+##################################################
+# check if specified path exists on server.
+# input 1: GET path
+# input 2: expected error message
+# global 1: JSESSION
+# global 2: server
+function entityExists
+{
+#set -x
+	remote=$1
+	notFound=$2	
+	res=`XNATRestClient -user_session ${JSESSION} -host $server -m GET -remote "$remote" | grep "${notFound}"`
+	if [ -n "$res"	]; then
+		echo "0"
+	else 
+		echo "1"
+	fi
+}
+
+echo "local folder -> XNAT"
+if [ -z $2 ]; then
+echo "Usage: loc2xnat <session label> <local directory> <mode> [options]"
+echo "e.g. loc2xnat SUBJ1_MRSESSION1 ProcessedDir r"
+echo "e.g. loc2xnat SUBJ1_MRSESSION1 Session1 d -s 10 -ds"
+echo "mode: \"r\": upload to resource folder (any file); \"d\": upload oridinal scan (DICOM)"
+echo "Options:"
+echo "	-sr	<server>			"
+echo "	-u	<user>"
+echo "	-pa	<password>"
+echo "	-pr	<XNAT project>"
+echo "	-r	<XNAT dir>		XNAT destination resource dir"
+echo "	-subj	<subject ID>"
+echo "	-ds	generate a derived scan number to avoid overwriting existing scans (use scan_no as the base)"
+echo "	-s	<scan_no>		scan no."
+echo "	-z 				Do not delete the downloaded temp.zip file"
+echo "	-d 				Delete target if existed."
+exit -1
+fi
+slabel=$1
+dir=$2
+mode=$3
+
+if [ -f "loc2xnat.properties" ]; then 
+	source loc2xnat.properties
+else
+	source ${MFSCRIPT}/xnat2loc.properties
+fi
+
+args=$*
+args=( $args )
+unset savezip
+
+for((i=3; i<((${#args[*]})); i++)); do
+	if [ "${args[i]}" == "-sr" ]; then 
+		(( i++ ))
+		server="${args[i]}" 
+		continue 
+	fi
+	if [ "${args[i]}" == "-ds" ]; then derScanID=1; continue; fi
+	if [ "${args[i]}" == "-z" ]; then savezip=1; continue; fi
+	if [ "${args[i]}" == "-d" ]; then delete=1; continue; fi
+	if [ "${args[i]}" == "-s" ]; then 
+		(( i++ ))
+		scan="${args[i]}" 
+		continue 
+	fi		
+	if [ "${args[i]}" == "-u" ]; then 
+		(( i++ ))
+		user="${args[i]}" 
+		continue 
+	fi
+	if [ "${args[i]}" == "-pa" ]; then 
+		(( i++ ))
+		pass="${args[i]}"
+		continue
+	fi
+	if [ "${args[i]}" == "-l" ]; then 
+		(( i++ ))
+		slabel="${args[i]}" 
+		continue 
+	fi
+	if [ "${args[i]}" == "-pr" ]; then 
+		(( i++ ))
+		project="${args[i]}" 
+		continue 
+	fi
+	if [ "${args[i]}" == "-sr" ]; then 
+		(( i++ ))
+		server="${args[i]}" 
+		continue 
+	fi
+	if [ "${args[i]}" == "-r" ]; then 
+		(( i++ ))
+		xnat_dir="${args[i]}" 
+		continue 
+	fi
+	if [ "${args[i]}" == "-subj" ]; then 
+		(( i++ ))
+		subj="${args[i]}" 
+		continue 
+	fi		
+done
+
+if [ -z "$xnat_dir" ]; then xnat_dir=$dir; fi
+
+cur_dir=`pwd`
+ 	if [ "$mode" == "r" ]; then
+
+#		JSESSION=`curl -k -u $user:$pass ""${server}/REST/JSESSION""`
+#		if [ -z "$JSESSION" ]; then echo "login failed, exiting"; exit -1; fi
+#		createEntity "/data/archive/projects/${project}/subjects/${subj}" "Unable to find the specified subject."
+#		createEntity "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}?xsiType=xnat:mrSessionData" "Unable to find the specified experiment."
+
+
+	pushd $dir
+	rm -f temp.zip
+	zip temp *
+
+#	delete if previously existed.
+	if [ -n "$delete" ]; then
+		echo XNATRestClient -u $user -p $pass -host $server -m DELETE -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}?removeFiles=true"
+		XNATRestClient -u $user -p $pass -host $server -m DELETE -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}?removeFiles=true"
+	fi
+	#create the resource.
+	echo XNATRestClient -u $user -p $pass -host $server -m PUT -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}"
+	XNATRestClient -u $user -p $pass -host $server -m PUT -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}"
+	#upload files for the resource.
+	echo XNATRestClient -u $user -p $pass -host $server -local temp.zip -m PUT -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}/files/temp.zip?extract=true&overwrite=true"
+	XNATRestClient -u $user -p $pass -host $server -local temp.zip -m PUT -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}/files/temp.zip?extract=true&overwrite=true"
+
+	echo "Remote URL:"
+	echo ${server}/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}/files?format=zip
+	echo "${server}/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${xnat_dir}/files?format=zip" > $cur_dir/$slabel"_archive_url.txt"
+elif [ "$mode" == "d" ]; then
+	JSESSION=`curl -k -u $user:$pass ""${server}/REST/JSESSION""`
+	if [ -z "$JSESSION" ]; then echo "login failed, exiting"; exit -1; fi
+	createEntity "/data/archive/projects/${project}/subjects/${subj}" "Unable to find the specified subject."
+	echo "step 1"
+	createEntity "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}?xsiType=xnat:imageSessionData" "Unable to find the specified experiment."
+
+	#if not specified, derive the scan number from the DICOM.
+	scan=`dcminfo -q -t 0020 0011 $dir`	
+	scan=${scan//" "/""}
+
+	#create a derived scan ID
+	if [ -n "$derScanID" ]; then
+		num=1	
+		while [ -z "$scanIDResolved" ]; do
+			res=`entityExists "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scan}0${num}?xsiType=xnat:mrScanData" "Unable to find the specified scan."`
+			if [ "${res}" == "1" ]; then
+				(( num++ ))
+			else
+				scanIDResolved=1
+				scan=${scan}0${num}
+			fi
+			if (( num > 1000 )); then 
+				echo "ERROR: Cannot resolve scan ID"
+				exit -1
+			fi
+		done
+	fi
+	if [ -n "$delete" ]; then
+		echo XNATRestClient -u $user -p $pass -host $server -m DELETE -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scan}?removeFiles=true"
+		XNATRestClient -u $user -p $pass -host $server -m DELETE -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scan}?removeFiles=true"
+	fi
+	createEntity "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scan}?xsiType=xnat:mrScanData" "Unable to find the specified scan."		
+	pushd $dir
+	rm -f temp.zip
+	zip temp *
+	echo XNATRestClient -u $user -p $pass -host $server -local temp.zip -m PUT -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scan}/resources/DICOM/files/temp.zip?extract=true\&format=DICOM"	
+	XNATRestClient -u $user -p $pass -host $server -local temp.zip -m PUT -remote "/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scan}/resources/DICOM/files/temp.zip?overwrite=true&extract=true"	
+	#\&format=DICOM
+	#echo XNATRestClient -u $user -p $pass -host $server -local temp.zip -m PUT -remote #/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}?triggerPipelines=true
+	#XNATRestClient -u $user -p $pass -host $server -local temp.zip -m PUT -remote #/data/archive/projects/${project}/subjects/${subj}/experiments/${slabel}?triggerPipelines=true
+fi
+popd
+#set +x
+if [ ! -f "loc2xnat.properties" ]; then	
+	echo "server=${server}" >> loc2xnat.properties
+	echo "user=${user}" >> loc2xnat.properties
+#	echo "pass=${pass}" >> loc2xnat.properties
+	echo "project=${project}" >> loc2xnat.properties
+fi

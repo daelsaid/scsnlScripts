@@ -1,0 +1,173 @@
+#!/bin/bash
+
+#Sun Grid Engine configuration options
+#shell name
+#$ -S /bin/bash
+#write .e and .o to the working directory
+#$ -cwd
+#merge stdout and stderr
+#$ -j y
+#import environment variables
+#$ -V
+
+#split tokenized string 
+#input 1: string
+#input 2: token
+function split_str
+{
+	local str="$1"
+	local token="$2"
+	arr=`echo "$str" | tr "$token" " "`
+	echo $arr
+}
+#input 1: CURL connection string, i.e. curl -k -u user:pass host ....
+#input 2: scan type
+function get_scans
+{
+	local cstr=$1
+	local stype=$2	
+	local lines
+	local row
+	local cols
+	local ids
+	local idi
+	local ti
+
+	lines=`$cstr`
+	eval "lines=($lines)"
+	OLDIFS=$IFS
+	IFS=","
+	cols=(${lines[0]})
+	for ((i=0; i<${#cols[*]}; i++)); do
+		if [ "${cols[i]}" == "ID" ]; then idi=$i; fi
+		if [ "${cols[i]}" == "type" ]; then ti=$i; fi
+	done
+	for ((i=1; i<${#lines[*]}; i++)); do
+		row=( ${lines[i]} )
+		if [ "${row[$ti]}" == "$stype" ]; then
+			ids="${row[$idi]} $ids"
+		fi
+	done
+	IFS=$OLDIFS
+	echo $ids
+}
+
+echo "Import scans into an offline session."
+if [ -z $2 ]; then
+echo "Usage: impsc <session dir> <foreign session label> [options]"
+echo "Options:"
+echo "	-sr	<server>			"
+echo "	-u	<user>"
+echo "	-pa	<password>"
+echo "	-pr	<XNAT project>"
+echo "	-s	<scan_id>[,<scan_id>,...]	scan id's in the foreign session"
+echo "	-st	<scan type>		scan type to import, if scan id's are not specified."
+echo "	-subj	<subject ID>"
+exit -1
+fi
+#set -x
+SDIR=$1
+ISLABEL=$2
+
+pushd $SDIR &> /dev/null
+cur_path=`pwd`
+STUDY=`basename $cur_path`
+
+if [ "$STUDY" == "$ISLABEL" ]; then
+	echo "No need to import study to itself, exiting"
+	popd &> /dev/null
+	exit 0
+fi
+
+args=( $* )
+echo ${args[*]}
+for((i=1; i<((${#args[*]})); i++)); do
+	if [ "${args[i]}" == "-sr" ]; then (( i++ )); server="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-u" ]; then (( i++ )); user="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-pa" ]; then (( i++ )); pass="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-pr" ]; then (( i++ )); project="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-sr" ]; then (( i++ )); server="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-subj" ]; then (( i++ )); subj="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-st" ]; then 
+		(( i++ ))
+		st="${args[i]}"
+# 		if [ -n "$st" ]; then st=(`split_str $st ","`); fi
+		continue 
+	fi	
+
+	if [ "${args[i]}" == "-s" ]; then 
+		(( i++ ))
+		sc="${args[i]}"
+ 		if [ -n "$sc" ]; then isc=(`split_str $sc ","`); fi
+		continue 
+	fi	
+done
+
+if (( ${#isc}<1 )); then
+	if (( ${#st}>0 )); then
+#		set -x
+		cstr="curl -k -u $user:$pass $server/REST/projects/$project/subjects/$subj/experiments/$ISLABEL/scans?format=csv"
+		isc="`get_scans "$cstr" "$st"`"
+		sc=${isc// /,}
+		echo ${isc[*]}
+		echo $sc
+	fi
+	if (( ${#isc}<1 )); then
+		echo "No scans to import, exiting."
+		exit -1
+	fi
+fi
+tdir=`pwd`
+tempdir=_IMPORT_TEMP
+
+#build a list of currently existing DICOM directory names
+dnames=( `ls -d study*` )
+
+if [ -f "$impfile" ]; then source $impfile; fi
+
+mkdir -p $tempdir
+mkdir -p logs
+logfile=`pwd`/logs/import_`date +%Y%m%d_%H%M%S`.log
+#populate arrays of sid, seq, desc, cnt with existing scan info.
+txt2bash DICOM.studies.txt $tempdir/home.params 
+pushd $tempdir
+
+#download the scan to import to a temp dir.
+xnat2loc $ISLABEL -sr $server -u $user -pa $pass -pr $project -subj $subj -s $sc
+#populate arrays of sid_n, seq_n, desc_n, cnt_n with imported scan info.
+txt2bash $ISLABEL/DICOM.studies.txt import.params -n sid_n,seq_n,desc_n,cnt_n
+source home.params
+source import.params
+n=${#dnames[*]}
+
+#populate the array with all possible names that the algorithm can encounter.
+for ((i=0,j=n;i<${#sid[*]};i++,j++)); do
+	dnames[j]=study${sid[i]}
+done
+echo "dnames: ${dnames[*]}"
+n=${#dnames[*]}
+echo "src		dest		src_id		dest_id" > $logfile
+tdfile=$tdir/DICOM.studies.txt
+
+for ((i=0,j=${#sid[*]}; i<${#sid_n[*]}; i++,j++));do
+	res=0
+	sugg_ind=0
+	while (( res==0 )); do
+		new_id=${isc[i]}00$sugg_ind
+		res=1
+		for ((k=0; k<${#dnames[*]}; k++)); do
+			if [ "${dnames[k]}" == "study$new_id" ]; then res=0; break; fi			
+		done
+		if (( res==0 )); then (( sugg_ind++ )); fi
+	done	
+#	sid_n[i]=$new_id
+	echo "$ISLABEL		$STUDY		${isc[i]}		$new_id" >> $logfile
+	mv $ISLABEL/study${sid_n[i]} $tdir/study$new_id
+	echo "$new_id		${seq_n[i]}		${desc_n[i]}		${cnt_n[i]}" >> $tdfile
+done
+
+popd &> /dev/null
+rm -r $tempdir &> /dev/null
+popd &> /dev/null
+cat $logfile
+

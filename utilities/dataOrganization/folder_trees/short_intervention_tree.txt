@@ -1,0 +1,2444 @@
+
+6005_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6005/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6005-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6005-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6005-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6005-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6005-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_April27_3conditions.m~
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 83 files
+
+6008_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6008/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run1_ScanTask_6008.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6008-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run2_ScanTask_6008.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6008-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run3_ScanTask_6008.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6008-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run4_ScanTask_6008.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6008-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6008-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_April27_3conditions.m~
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+29 directories, 83 files
+
+6011_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6011/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6011-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6011-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6011-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6011-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6011-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6012_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6012/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6012-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6012-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6012-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6012-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6012-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6013_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6013/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run1_ScanTask_12.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6013-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition1_b
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run1_ScanTask_12.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-2.edat2
+    │   │   └── Short_Intervention_Scanner-delayedVerification-6013-2.txt
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_b_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run2_ScanTask_12.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6013-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run3_ScanTask_12.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6013-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── runFile
+    │   │   │   └── run4_ScanTask_12.txt
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-5.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6013-5.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6013-5.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+34 directories, 89 files
+
+6014_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6014/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6014-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6014-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6014-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6014-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6014-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6015_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6015/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6015-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6015-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6015-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6015-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6015-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6017_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6017/visit1/session1
+├── anatomical
+│   ├── spgr_1.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6017-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6017-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6017-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6017-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6017-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6018_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6018/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6018-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6018-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6018-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6018-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6018-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6020_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6020/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6020-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6020-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6020-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6020-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6020-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6021_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6021/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6021-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   ├── task_design_test_Oct27_errorCondition.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6021-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6021-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6021-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6021-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   ├── task_design_single_trial.m
+    │   │   └── task_design_test_Oct27.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 83 files
+
+6025_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6025/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6025-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6025-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6025-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6025-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6025-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6029_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6029/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6029-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6029-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6029-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6029-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6029-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+25 directories, 78 files
+
+6032_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6032/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6032-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6032-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6032-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-2-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-2-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-2-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6032-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6032-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6032-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6032-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6032-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6032-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 80 files
+
+6034_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6034/visit1/session1
+├── anatomical
+│   ├── spgr_1.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6034-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6034-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6034-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6034-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6034-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 80 files
+
+6035_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6035/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6035-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6035-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6035-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6035-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6035-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 80 files
+
+6038_2_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6038/visit2/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6038-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6038-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6038-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6038-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6038-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec7_2conditions.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 80 files
+
+6039_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6039/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6039-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6039-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6039-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6039-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6039-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 76 files
+
+6040_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6040/visit1/session1
+├── anatomical
+│   ├── spgr_1.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6040-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6040-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6040-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6040-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6040-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 76 files
+
+6041_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6041/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6041-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6041-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6041-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6041-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6041-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 76 files
+
+6042_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6042/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6042-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6042-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6042-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6042-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6042-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 76 files
+
+6043_1_1.3T2
+
+/oak/stanford/groups/menon/rawdata/scsnl/6043/visit1/session1
+├── anatomical
+│   ├── spgr_2.nii.gz
+│   └── spgr.nii.gz
+├── dwi
+│   ├── dwi_raw.json
+│   └── dwi_raw.nii.gz
+└── fmri
+    ├── addition1
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-1.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-1.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6043-1.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition1_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition2
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-2.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-2.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6043-2.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition2_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition3
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-3.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-3.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6043-3.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition3_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    ├── addition4
+    │   ├── behavioral
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-4.edat2
+    │   │   ├── Short_Intervention_Scanner-delayedVerification-6043-4.txt
+    │   │   └── tabfile_Short_Intervention_Scanner-delayedVerification-6043-4.txt
+    │   ├── task_design
+    │   │   ├── task_design_April27_3conditions.m
+    │   │   ├── task_design_Aug11_4cond_delayed_3dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_0dur.m
+    │   │   ├── task_design_Aug8_4cond_delayed_9dur.m
+    │   │   ├── task_design_Aug9_4cond_delayed_6dur.m
+    │   │   ├── task_design_Dec17_4cond_delayed_onset.m
+    │   │   ├── task_design_Dec8_4cond_delayed_onset.m
+    │   │   ├── task_design_Feb11_4cond_delayed_9dur.m
+    │   │   ├── task_design_May8_3conditions.m
+    │   │   └── task_design_single_trial.m
+    │   └── unnormalized
+    │       ├── I.nii.gz
+    │       ├── task-addition4_bold.json
+    │       └── unused
+    │           ├── I_0000.nii.gz
+    │           └── I_0001.nii.gz
+    └── resting_state_1
+        └── unnormalized
+            ├── I.nii.gz
+            ├── task-rest_bold.json
+            └── unused
+                ├── I_0000.nii.gz
+                └── I_0001.nii.gz
+
+26 directories, 76 files

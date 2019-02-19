@@ -1,0 +1,265 @@
+#!/bin/bash
+
+#Sun Grid Engine configuration options
+#shell name
+#$ -S /bin/bash
+#write .e and .o to the working directory
+#$ -cwd
+#merge stdout and stderr
+#$ -j y
+#import environment variables
+#$ -V
+
+# in 1: downloaded study location
+# in 2: location to save file with mappings
+# in 3: predefined scans
+function save_UID_map
+{
+	local st=$1 
+	local mf=$2
+	local sc=($3)
+	
+	pushd $st/scans
+	local scans=""
+	local uids=""
+	local scan xnatid suid i j found
+	for ((i=0; i<${#sc[*]}; i++)); do
+		scandir=(`ls -d ${sc[i]}-*`)
+		if [ -z "${scandir}" ]; then
+			echo "xnat2loc ERROR: cannot find scan ${sc[i]}, exiting"
+			exit -1
+		fi
+		if (( ${#scandir[*]} > 1 )); then
+			regex="${sc[i]}-MR([0-9]+).*"
+			found=-1
+			for (( j=0; j<${#scandir[*]}; j++ )); do
+				[[ "${scandir[j]}" =~ $regex ]]
+				if [ -z "${BASH_REMATCH[0]}" ]; then
+					if (( found != -1 )); then
+						echo "xnat2loc ERROR: cannot uniquely resolve scan ID: ${sc[i]}, exiting"
+						exit -1
+					else
+						found=$j
+					fi
+				fi
+			done
+			scandir=${scandir[found]}
+			if [ -z "${scandir}" -o "$found" == "-1" ]; then
+				echo "xnat2loc ERROR: cannot find scan ${sc[i]}, exiting"
+				exit -1
+			fi
+		fi
+		xnatid=${scan%-*}
+		suid=(`dcminfo -q -t 0020 000e $scandir/resources/DICOM/files`)
+		suid=( $suid )
+#		scans="$scans ${sc[i]}"
+		if ((i>0)); then
+			uids="$uids,${sc[i]},$suid"
+		else
+			uids="${sc[i]},$suid"
+		fi
+	done
+	popd
+	echo "serinstuids=($uids)" | tr -d ' ' >> $mf
+}
+
+###################################################################
+#
+# Get scan #'s of given types.
+# 
+# input 1: CURL connection string, i.e. curl -k -u user:pass host ....
+# input 2: list of scan types, comma-separated
+#
+
+function get_scans
+{
+	local cstr="$1"
+	local stypes="$2"
+	local lines
+	local row
+	local cols
+	local ids
+	local idi
+	local ti
+
+	lines=`$cstr`
+	eval "lines=($lines)"
+	OLDIFS=$IFS
+	IFS=","
+	cols=(${lines[0]})
+	for ((i=0; i<${#cols[*]}; i++)); do
+		if [ "${cols[i]}" == "ID" ]; then idi=$i; fi
+		if [ "${cols[i]}" == "type" ]; then ti=$i; fi
+	done
+	stypes=( $stypes )
+	for ((i=1; i<${#lines[*]}; i++)); do
+		row=( ${lines[i]} )
+		for ((j=0; j<${#stypes[*]}; j++));do 
+			if [ "${row[$ti]}" == "${stypes[j]}" ]; then
+				if [ -n "$ids" ]; then 
+					ids="${row[$idi]},$ids"
+				else 
+					ids=${row[$idi]}
+				fi				
+				break
+			fi
+		done
+	done
+	IFS=$OLDIFS
+	echo $ids
+}
+
+#split tokenized string 
+#input 1: string
+#input 2: token
+function split_str
+{
+	local str="$1"
+	local token="$2"
+	arr=`echo "$str" | tr "$token" " "`
+	echo $arr
+}
+
+echo $MFREL
+echo "XNAT session -> local storage"
+if [ -z $1 ]; then
+echo "Usage: xnat2loc <session label> [options]"
+echo "Options:"
+echo "	-sr	<server>			"
+echo "	-u	<user>"
+echo "	-pa	<password>"
+echo "	-pr	<XNAT project>"
+echo "	-o	<outdir>			"
+echo "	-s	<scan_id>[,<scan_id>,...]	scan id's (default is ALL)"
+echo "	-m	save XNAT ID -> DICOM Series instance UID map to scans.txt"
+echo "	-st	<scan_type>[,<scan_type>,...]	scan type(s), when scan id's are not available"
+echo "	-r	<dir>[,<dir>,...]		resource directory(ies) to download"
+echo "	-subj	<subject ID>"
+echo "	-z	Do not unzip"
+exit -1
+fi
+umask 0007
+dcmsrt=${MFREL}/dcm_sort
+dcmsrt=dcm_sort
+
+slabel=$1;
+
+if [ -f "xnat2loc.properties" ]; then 
+	echo "using local properites file"
+	cat xnat2loc.properties
+	source ./xnat2loc.properties
+else
+	echo "local properties file not found, using default properites"
+	source ${MFSCRIPT}/xnat2loc.properties
+fi
+
+for arg in "$@"; do args[i]=$arg; ((i++)); done
+#for((i=1; i<((${#args[*]})); i++)); do echo ${args[i]}; done
+mapfile=0
+set -x
+for((i=1; i<((${#args[*]})); i++)); do
+
+	if [ "${args[i]}" == "-sr" ]; then (( i++ )); server="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-z" ]; then savezip=1; continue; 	fi
+	if [ "${args[i]}" == "-u" ]; then (( i++ )); user="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-pa" ]; then (( i++ )); pass="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-l" ]; then (( i++ )); slabel="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-pr" ]; then (( i++ )); project="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-sr" ]; then (( i++ )); server="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-o" ]; then (( i++ )); outdir="${args[i]}"; continue; fi
+	if [ "${args[i]}" == "-m" ]; then mapfile=1; continue; fi
+	if [ "${args[i]}" == "-s" ]; then 
+		(( i++ ))
+		scans="${args[i]}"
+ 		if [ -f "$scans" ]; then scans=`cat $scans`; fi
+		continue 
+	fi		
+	if [ "${args[i]}" == "-st" ]; then 
+		(( i++ ))
+		stypes="${args[i]}"
+ 		if [ -f "$stypes" ]; then stypes=`cat $scans`; fi
+		continue 
+	fi		
+	if [ "${args[i]}" == "-r" ]; then 
+		(( i++ ))
+		rdirs="${args[i]}"
+ 		if [ -f "$rdirs" ]; then rdirs=`cat $rdirs`; fi
+		continue 
+	fi
+	if [ "${args[i]}" == "-subj" ]; then (( i++ )); subj="${args[i]}"; continue; fi
+done
+server=`echo $server | sed 's/\/$//'`
+if [ -z "$project" -o -z "$subj" -o -z "$slabel" ]; then
+	echo "Please specify project, subject and session label."
+	exit -1
+fi
+
+echo "project: $project subject: $subj session: $slabel scans: $scans"
+rm -f xnat2loc.properties
+echo "server=${server}" >> xnat2loc.properties
+echo "user=${user}" >> xnat2loc.properties
+#echo "pass=${pass}" >> xnat2loc.properties
+echo "project=${project}" >> xnat2loc.properties
+if [ -z "$outdir" ]; then outdir=$slabel; fi
+set -x
+mkdir $outdir
+pushd $outdir
+
+if [ -n "$stypes" ]; then
+	cstr="curl -k -u $user:$pass $server/REST/projects/$project/subjects/$subj/experiments/$slabel/scans?format=csv"
+	extra_scans=`get_scans "$cstr" "$stypes"`
+	if [ -z "$scans" ]; then 
+		scans=$extra_scans
+	else
+		scans="${scans},$extra_scans"
+	fi
+elif [ -z "$scans" ]; then 
+	scans="ALL"; 
+fi
+
+echo ${scans}
+
+
+#download scans if no resource dir was specified
+if [ -z "$rdirs" ]; then
+	echo "curl -k -u $user:$pass \"${server}/REST/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scans}/files?format=zip\" > temp.zip"
+	curl -k -u $user:$pass "${server}/REST/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scans}/files?format=zip" > temp.zip
+#download resource dir(s)
+	if [ -n "$savezip" ]; then popd; exit 0; fi
+	unzip temp.zip &> /dev/null; rm temp.zip
+	mkdir DICOM
+#	mkdir SECONDARY
+	set -x
+	if [ "$mapfile" == "1" -a "$scans" != "ALL" ]; then
+		OLDIFS=$IFS
+		IFS=','
+		sarr=( $scans )
+		IFS=$OLDIFS
+		save_UID_map $slabel `pwd`/scans.txt "${sarr[*]}"
+	fi
+	set +x
+	mv */scans/*/*/DICOM/files/* DICOM
+	rm -r $slabel
+	#mv */scans/*/*/secondary/files/* SECONDARY
+	#dcm_sort DICOM
+	$dcmsrt DICOM &> /dev/null
+else
+	echo "curl -k -u $user:$pass \"${server}/REST/projects/${project}/subjects/${subj}/experiments/${slabel}/scans/${scans}/files?format=zip\" > temp.zip"
+	curl -k -u $user:$pass "${server}/REST/projects/${project}/subjects/${subj}/experiments/${slabel}/resources/${rdirs}/files?format=zip" > temp.zip
+	unzip temp.zip &> /dev/null; rm temp.zip
+	mv ${slabel}/resources/* .
+	lst=( `split_str $rdirs ","` )
+	for ((i=0; i<${#lst[*]}; i++)); do
+		t=${lst[i]}
+		mv $t/files/* $t/
+		rm -r $t/files
+	done
+fi
+
+#Retrieve using the session label. Need to know the project & the subject.
+#Method 2. Retrieve using session ID. 
+#echo "curl -k -u $user:$pass \"${serv}/REST/experiments/${S}/scans/${scans}/files?format=zip\" > temp.zip"
+#curl -k -u $usr:$pass "${serv}/REST/experiments/${S}/scans/${scans}/files?format=zip" > temp.zip
+
+popd
+

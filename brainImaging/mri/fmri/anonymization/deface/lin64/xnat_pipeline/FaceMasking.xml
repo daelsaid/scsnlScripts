@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pipeline xmlns="http://nrg.wustl.edu/pipeline" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nrg.wustl.edu/pipeline ..\schema\pipeline.xsd"  xmlns:fileUtils="http://www.xnat.org/java/org.nrg.imagingtools.utils.FileUtils">
+	<name>FaceMasking</name>
+	<!--Should be  Name of the pipeline XML file -->
+	<location>/data/tip/pipeline_1_6dev/catalog/FaceMasking</location>
+	<!-- Filesystem path to the pipeline XML -->
+	<description>Epicryption (a.k.a. FaceMasking) v. 07/02/2013. </description>
+        <resourceRequirements>
+                   <!-- NOTE:  Queues defined in /nrgpackages/sge_root/nrg/common/qtask.  Dev machines have overlay at /opt/sge_common/[DEV_MACH_NAME]/qtask which is mounted as a bind  -->
+           <property name="DRMAA_JobTemplate_JobCategory">nrglab_q</property>
+        </resourceRequirements>
+	<documentation>
+	   <authors>
+	   	<author>
+	   		<lastname>Milchenko</lastname>
+			<firstname>Mikhail</firstname>
+	   	</author>
+	   </authors>
+		<version>1</version>
+		<input-parameters>
+			<parameter>
+				<name>scanids</name>
+				<values><schemalink>xnat:mrSessionData/scans/scan/ID</schemalink></values>
+				<description>The scan ids of all the scans of the session</description>
+			</parameter>
+			<parameter>
+				<name>xnat_id</name>
+				<values><schemalink>xnat:mrSessionData/ID</schemalink></values>
+				<description>The scan ids of all the scans of the session</description>
+			</parameter>
+			<parameter>
+				<name>sessionId</name>
+				<values><schemalink>xnat:mrSessionData/label</schemalink></values>
+				<description>The scan ids of all the scans of the session</description>
+			</parameter>
+			<parameter>
+				<name>project</name>
+				<values><schemalink>xnat:mrSessionData/project</schemalink></values>
+				<description>Project</description>
+			</parameter>
+			<parameter>
+				<name>subject</name>
+				<values><schemalink>xnat:mrSessionData/subject_ID</schemalink></values>
+				<description>Subject ID</description>
+			</parameter>
+			<parameter>
+				<name>usebet</name>
+				<values><csv>1</csv></values>
+				<description>Set to 1 to generate an exclusion brain mask, 0 to skip this step.</description>
+			</parameter>
+			<parameter>
+				<name>maskears</name>
+				<values><csv>1</csv></values>
+				<description>Set to 1 to enable ear masking.</description>
+			</parameter>
+			<parameter>
+				<name>invasiveness</name>
+				<values><csv>1.0</csv></values>
+				<description>Invasiveness coefficient. Decrease/increase between 0.5 and 1.5 to control the degree of masking and depth of voxel alteration</description>
+			</parameter>
+			<parameter>
+				<name>threshold</name>
+				<values><csv>-1</csv></values>
+				<description>Background-object intensity threshold. Set to -1 for automatic threshold.</description>
+			</parameter>			
+			<parameter>
+				<name>ref_session</name>
+					<values><schemalink>xnat:mrSessionData/label</schemalink></values>
+					<description>Session label of reference scan</description>
+			</parameter>
+			<parameter>
+				<name>ref_scan_type</name>
+					<values><csv>t1w</csv></values>
+			</parameter>
+			<parameter>
+				<name>ref</name>
+				<values><schemalink>xnat:mrSessionData/scans/scan/ID</schemalink></values>
+				<description>Reference scan to coregister all others to it. All ROI's are based on reference scan.</description>
+			</parameter>
+			<parameter>
+				<name>use_manual_roi</name>
+				<values><csv>0</csv></values>
+				<description>Tells the pipeline whether to use (1) or not use (0) manual ROIs.</description>
+			</parameter>
+			<parameter>
+				<name>rois</name>
+				<values><csv>0</csv></values>
+				<description>Manual ROI(s) to mask in the reference space. Format: x0,y0,z0-x1,y1,z1. Use "_" delimiter for multiple ROI(s). Cuboid ROI is defined by the outer vertex P0=x0,y0,z0 "above" the surface, and vertex P1, diagonal from P0, "below" the surface. The outer vertex must precede the inner in a ROI definition.</description>
+			</parameter>
+			<parameter>
+				<name>dirs</name>
+				<values><csv>0</csv></values>
+				<description>Comma-separated direction(s) for the manual ROI(s), one direction per ROI. 0 - left/right, 1 - top/bottom, 2 - near/far. </description>
+			</parameter>
+		</input-parameters>
+	</documentation>
+	<xnatInfo appliesTo="xnat:mrSessionData"/>
+	<outputFileNamePrefix>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/maskface')^</outputFileNamePrefix>
+	<loop id="series" xpath="^/Pipeline/parameters/parameter[name='scanids']/values/list^"/>
+	<!-- Description of the Pipeilne -->
+	<parameters>
+		<parameter>
+			<name>mailhost</name>
+			<values>
+			  <unique>artsci.wustl.edu</unique>
+			  </values>
+		</parameter>
+		<parameter>
+			<name>valid_ref</name>
+			<values>
+				<unique>^if (empty(/Pipeline/parameters/parameter[name='ref']/values/unique/text())) then substring-before(/Pipeline/parameters/parameter[name='scanids']/values/unique/text(),',') else /Pipeline/parameters/parameter[name='ref']/values/unique/text()^</unique>
+			</values>
+		</parameter>
+		<parameter>
+			<name>workdir</name>
+			<values>
+				<unique>^concat(/Pipeline/parameters/parameter[name='builddir']/values/unique/text(),'/',/Pipeline/parameters/parameter[name='sessionId']/values/unique/text())^</unique>
+			</values>
+		</parameter>
+	</parameters>
+	<steps>
+		<step id="0" description="Convert input parameters" workdirectory="^/Pipeline/parameters/parameter[name='workdir']/values/unique/text()^">
+			<resource name="echo" location="commandlineTools" >
+				<argument id="n"/>
+				<argument id="string" ><value>^concat(PIPELINE_LOOPON(series),',')^</value></argument>
+				<argument id="redirect_stdout_append"><value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/scans.txt')^</value></argument>
+			</resource>
+			<resource name="echo" location="commandlineTools" >
+				<argument id="n"/>
+				<argument id="string" ><value>^concat('study',PIPELINE_LOOPON(series),',')^</value></argument>
+				<argument id="redirect_stdout_append"><value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/studies.txt')^</value></argument>
+			</resource>			
+			<resource name="mkdir" location="commandlineTools" >
+				<argument id="dirname">
+					<value>DICOM_DEFACED</value>
+				</argument>
+			</resource>
+		</step>
+		<step id="1" description="Download and analyse DICOM" workdirectory="^/Pipeline/parameters/parameter[name='builddir']/values/unique/text()^">
+			<resource name="xnat2loc" location="FaceMasking/resource">
+				<argument id="session">
+					<value>^/Pipeline/parameters/parameter[name='sessionId']/values/unique/text()^</value>
+				</argument>
+				<argument id="host">
+					<value>^/Pipeline/parameters/parameter[name='host']/values/unique/text()^</value>
+				</argument>				
+				<argument id="user">
+					<value>^/Pipeline/parameters/parameter[name='user']/values/unique/text()^</value>
+				</argument>
+				<argument id="password">
+					<value>^/Pipeline/parameters/parameter[name='pwd']/values/unique/text()^</value>
+				</argument>
+				<argument id="project">
+					<value>^/Pipeline/parameters/parameter[name='project']/values/unique/text()^</value>
+				</argument>
+				<argument id="subject">
+					<value>^/Pipeline/parameters/parameter[name='subject']/values/unique/text()^</value>
+				</argument>
+				<argument id="scans">
+					<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/scans.txt')^</value>
+				</argument>
+			</resource>
+		</step>
+		<step id="1a" description="Import a scan from another session to use as a ref scan. Write configuration file for mask_face" workdirectory="^/Pipeline/parameters/parameter[name='builddir']/values/unique/text()^">
+			<resource name="impsc.xml" location="FaceMasking/resource">
+				<argument id="session">
+					<value>^/Pipeline/parameters/parameter[name='ref_session']/values/unique/text()^</value>
+				</argument>
+				<argument id="host">
+					<value>^/Pipeline/parameters/parameter[name='host']/values/unique/text()^</value>
+				</argument>				
+				<argument id="user">
+					<value>^/Pipeline/parameters/parameter[name='user']/values/unique/text()^</value>
+				</argument>
+				<argument id="password">
+					<value>^/Pipeline/parameters/parameter[name='pwd']/values/unique/text()^</value>
+				</argument>
+				<argument id="project">
+					<value>^/Pipeline/parameters/parameter[name='project']/values/unique/text()^</value>
+				</argument>
+				<argument id="subject">
+					<value>^/Pipeline/parameters/parameter[name='subject']/values/unique/text()^</value>
+				</argument>
+				<argument id="type">
+					<value>^/Pipeline/parameters/parameter[name='ref_scan_type']/values/unique/text()^</value>
+				</argument>
+			</resource>
+			<resource name="parse_impsc_log.xml" location="FaceMasking/resource">
+				<argument id="log_dir"><value>logs</value></argument>
+				<argument id="redirect_stdout"><value>maskface.params</value></argument>				
+			</resource>
+		</step>
+		<step id="2" description="Run face masking on downloaded scans" workdirectory="^/Pipeline/parameters/parameter[name='workdir']/values/unique/text()^">
+			<resource name="mask_face" location="FaceMasking/resource">
+                <argument id="input">
+                    	<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/studies.txt')^</value>
+                </argument>
+				<argument id="output">
+					<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/DICOM_DEFACED')^</value>
+				</argument>
+				<argument id="bet" >
+					<value>^/Pipeline/parameters/parameter[name='usebet']/values/unique/text()^</value>
+				</argument>
+				<argument id="ears">
+					<value>^/Pipeline/parameters/parameter[name='maskears']/values/unique/text()^</value>
+				</argument>
+				<argument id="zip" />
+				<argument id="threshold">
+					<value>^/Pipeline/parameters/parameter[name='threshold']/values/unique/text()^</value>
+				</argument>
+				<argument id="gc">
+					<value>^/Pipeline/parameters/parameter[name='invasiveness']/values/unique/text()^</value>
+				</argument>
+				<argument id="ref">
+					<value>^concat('study',/Pipeline/parameters/parameter[name='ref']/values/unique/text())^</value>
+				</argument>
+				<argument id="use_manual_roi">
+					<value>^/Pipeline/parameters/parameter[name='use_manual_roi']/values/unique/text()^</value>
+				</argument>
+				<argument id="rois">
+					<value>^/Pipeline/parameters/parameter[name='rois']/values/unique/text()^</value>
+				</argument>
+				<argument id="dirs">
+					<value>^/Pipeline/parameters/parameter[name='dirs']/values/unique/text()^</value>
+				</argument>				
+			</resource>
+		</step>
+		<step id="3" description="Upload defaced DICOM to XNAT" workdirectory="^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/DICOM_DEFACED')^">
+			<resource name="XnatRestClient" location="xnat_tools">
+				<argument id="user">
+					<value>^/Pipeline/parameters/parameter[name='user']/values/unique/text()^</value>
+				</argument>
+				<argument id="password">
+					<value>^/Pipeline/parameters/parameter[name='pwd']/values/unique/text()^</value>
+				</argument>
+				<argument id="host">
+					<value>^/Pipeline/parameters/parameter[name='host']/values/unique/text()^</value>
+				</argument>
+				<argument id="method">
+					<value>PUT</value>
+				</argument>
+				<argument id="remote">
+					<value>^concat('"/data/archive/projects/',/Pipeline/parameters/parameter[name='project']/values/unique/text(),'/subjects/',/Pipeline/parameters/parameter[name='subject']/values/unique/text(),'/experiments/',/Pipeline/parameters/parameter[name='xnat_id']/values/unique/text(),'/scans/',PIPELINE_LOOPON(series),'/resources/DICOM_DEFACED/files/',PIPELINE_LOOPON(series),'.zip?format=DICOM&amp;content=DICOM_DEFACED&amp;extract=true"')^</value>
+				</argument> 
+				<argument id="local">
+					<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/DICOM_DEFACED/',PIPELINE_LOOPON(series),'.zip')^</value>
+				</argument>
+			</resource>
+		</step>
+		<step id="4" description="Upload defacing QC snapshots to XNAT" workdirectory="^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/maskface')^">
+			<resource name="XnatRestClient" location="xnat_tools">
+				<argument id="user">
+					<value>^/Pipeline/parameters/parameter[name='user']/values/unique/text()^</value>
+				</argument>
+				<argument id="password">
+					<value>^/Pipeline/parameters/parameter[name='pwd']/values/unique/text()^</value>
+				</argument>
+				<argument id="host">
+					<value>^/Pipeline/parameters/parameter[name='host']/values/unique/text()^</value>
+				</argument>
+				<argument id="method">
+					<value>PUT</value>
+				</argument>
+				<argument id="remote">
+					<value>^concat('"/data/archive/projects/',/Pipeline/parameters/parameter[name='project']/values/unique/text(),'/subjects/',/Pipeline/parameters/parameter[name='subject']/values/unique/text(),'/experiments/',/Pipeline/parameters/parameter[name='xnat_id']/values/unique/text(),'/scans/',PIPELINE_LOOPON(series),'/resources/DEFACE_QC/files/',PIPELINE_LOOPON(series),'.png?format=PNG&amp;content=MASKFACE_QC_PNG&amp;extract=true"')^</value>
+				</argument> 
+				<argument id="local">
+					<value>^concat(/Pipeline/parameters/parameter[name='workdir']/values/unique/text(),'/maskface/',PIPELINE_LOOPON(series),'_qc.zip')^</value>
+				</argument>				
+			</resource>
+		</step> 		
+		<step id="END-Notify" description="Notify">
+			<resource name="Notifier" location="notifications">
+                                <argument id="user">
+                                        <value>^/Pipeline/parameters/parameter[name='user']/values/unique/text()^</value>
+                                </argument>
+                                <argument id="password">
+                                        <value>^/Pipeline/parameters/parameter[name='pwd']/values/unique/text()^</value>
+                                </argument>
+				<argument id="to">
+					<value>^/Pipeline/parameters/parameter[name='useremail']/values/unique/text()^</value>
+				</argument>
+				<argument id="cc">
+					<value>^/Pipeline/parameters/parameter[name='adminemail']/values/unique/text()^</value>
+				</argument>
+				<argument id="from">
+					<value>^/Pipeline/parameters/parameter[name='adminemail']/values/unique/text()^</value>
+				</argument>
+				<argument id="subject">
+					<value>^concat(/Pipeline/parameters/parameter[name='xnatserver']/values/unique/text(), ' update: face masked DICOM files generated for ',/Pipeline/parameters/parameter[name='sessionId']/values/unique/text() )^</value>
+				</argument>
+				<argument id="host">
+					<value>^/Pipeline/parameters/parameter[name='mailhost']/values/unique/text()^</value>
+				</argument>
+				<argument id="body">
+					<value>^concat('Dear ',/Pipeline/parameters/parameter[name='userfullname']/values/unique/text(),',&lt;br&gt; &lt;p&gt;', ' Face masked DICOM files have been generated for  ', /Pipeline/parameters/parameter[name='sessionId']/values/unique/text(),' . Details of the  session are available  &lt;a href="',/Pipeline/parameters/parameter[name='host']/values/unique/text(),'/app/action/DisplayItemAction/search_element/xnat:mrSessionData/search_field/xnat:mrSessionData.ID/search_value/',/Pipeline/parameters/parameter[name='xnat_id']/values/unique/text(),'"&gt;', ' here. &lt;/a&gt; &lt;/p&gt;&lt;br&gt;', ' &lt;/p&gt;&lt;br&gt;', 'XNAT Team.')^
+					</value>
+				</argument>
+			</resource>
+		</step>
+	</steps>
+</Pipeline>

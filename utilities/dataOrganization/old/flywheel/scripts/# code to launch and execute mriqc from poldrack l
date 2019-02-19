@@ -1,0 +1,63 @@
+# code to launch and execute mriqc from poldrack lab 
+
+########################################################
+########################## ENV #########################
+########################################################
+
+ml system
+ml singularity/2.4.6
+sdev -t 2:00:00
+
+########################################################
+############################ SHELL #####################
+#######################################################
+
+# Open interactive singularity shell with proper bindings
+singularity shell -B /oak/stanford/groups/menon/software/singularity/mriqc:/usr/local/src/mriqc /home/groups/menon/lab_shared/singularity/singularity_images/quality_check_poldrack.img 
+
+# Run the mriqc command GENERIC
+mriqc [path_to_BIDS] [path_to_output_dir] participant -w [path_to_working_dir]
+
+# mcsnyder TEST CASE one subject with no T1s (ignore errors that there are no T1W or T2W scans found)
+mriqc /oak/stanford/groups/menon/projects/mcsnyder/fMRI_PREP_MAIDEN_VOYAGE/data/imaging/BIDS/ /oak/stanford/groups/menon/projects/chamblin/ participant -w /oak/stanford/groups/menon/projects/chamblin/
+
+# To debug, the location of the mriqc source code is /usr/local/src/mriqc
+
+########################################################
+######################## EXEC ##########################
+########################################################
+
+# Execute the container 
+singularity exec /home/groups/menon/lab_shared/singularity/singularity_images/quality_check_poldrack.img mriqc [path_to_BIDS] [path_to_output_directory] participant -w [path_to_working_dir]
+
+
+##########################################################
+####################### FAQ #######################
+###########################################################
+
+# 1. If I specify the same working dir as the last time I tried, will it pick up where it crashed/left off???
+	Yes
+
+# 2. If I specfiy a new working dir, will it resume where I left off? ??
+	No
+
+# 3. Must the output_dir path already exist???
+	Yes
+
+# 4. Must the working_dir path already exist????
+	No
+
+# 5. Can I execute everthing in Sherlock????
+	Yes/ See exec examples above
+
+# 6. Are the paths I specify on sherlock or the contain'er env??? 
+	Sherlock
+
+# 7.  How do I convert to BIDS????
+	Go to /oak/stanford/groups/menon/software/singularity/fmriprep/fmriprep/cli/BIDSgenerator.py 
+
+# 8. HOW DO I ESCAPE THE SINGULARITY SHELL???
+	exit
+
+
+

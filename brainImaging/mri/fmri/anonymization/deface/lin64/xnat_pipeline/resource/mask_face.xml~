@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Mohana Ramaratnam (Washington University) -->
+<pip:Resource xmlns:pip="http://nrg.wustl.edu/pipeline">
+	<pip:name>dcm2nii</pip:name>
+	<pip:location>/home/xnat/bin/mricron</pip:location>
+	<pip:type>Executable</pip:type>
+	<pip:description>Generates NIFTI files from DICOM</pip:description>
+	<pip:estimated_time>00:00:01</pip:estimated_time>
+	<pip:input>
+		<pip:argument id="anonymize" >
+			<pip:name>a</pip:name>
+			<pip:description>Anonymize [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="protocol" >
+			<pip:name>p</pip:name>
+			<pip:description>Protocol in filename [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="date" >
+			<pip:name>d</pip:name>
+			<pip:description>Date in filename [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="events" >
+			<pip:name>e</pip:name>
+			<pip:description>Events in filename [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="source" >
+			<pip:name>f</pip:name>
+			<pip:description>Source in filename [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="gzip" >
+			<pip:name>g</pip:name>
+			<pip:description>gzip [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="id" >
+			<pip:name>i</pip:name>
+			<pip:description>ID in filename [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="n" >
+			<pip:name>n</pip:name>
+			<pip:description>nii [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="r" >
+			<pip:name>r</pip:name>
+			<pip:description>Reorient [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="s" >
+			<pip:name>s</pip:name>
+			<pip:description>[Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="x" >
+			<pip:name>x</pip:name>
+			<pip:description>x [Y|N]</pip:description>
+		</pip:argument>
+		<pip:argument id="output" >
+			<pip:name>o</pip:name>
+			<pip:description>Output Folder</pip:description>
+		</pip:argument>
+		<pip:argument id="input"/>
+	</pip:input>
+</pip:Resource>

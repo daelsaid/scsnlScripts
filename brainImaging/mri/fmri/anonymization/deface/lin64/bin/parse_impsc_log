@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo "usage: parse_impsc_log <log dir>"
+	exit -1
+fi
+logdir=$1
+sid=`cat $logdir/import_*.log | tail -1 | sed 's/.*\t//'`
+echo "imp_ref=$sid"
+

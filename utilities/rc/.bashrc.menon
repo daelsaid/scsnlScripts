@@ -1,0 +1,33 @@
+# SCSNL lab wide environment variables, aliases, and functions
+
+#-------------------------#
+# Environmental Variables #
+#-------------------------#
+
+
+
+
+#----------#
+# Aliases  #
+#----------#
+
+alias mlsubmit="/oak/stanford/groups/menon/scsnlscripts/utilities/mlsubmit/mlsubmit.sh"
+
+
+
+
+#------------#
+# Functions  #
+#------------#
+function rm {
+        echo "Copying files to recycle bin.."
+        recycledir="/scratch/PI/menon/recycle_bin/`date +%y-%m-%d`"
+        if [ ! -d "$recycledir" ]; then
+                mkdir "$recycledir"
+                chmod 777 "$recycledir"
+        fi
+        cp -af "$@" "$recycledir"
+        echo "Removing files.."
+        command rm -i "$@"
+}
+

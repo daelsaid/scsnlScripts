@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pip:Resource xmlns:pip="http://nrg.wustl.edu/pipeline">
+	<pip:name>impsc</pip:name>
+	<pip:location>/home/shared/NRG/mmilch/script</pip:location>
+	<pip:type>Executable</pip:type>
+	<pip:description>Import sessions to the processing dir from specified experiment.</pip:description>
+	<pip:estimated_time>00:01:00</pip:estimated_time>
+	<pip:input>
+		<pip:argument id="session" >
+			<pip:description>Session label</pip:description>
+		</pip:argument>
+		<pip:argument id="host" >
+			<pip:name>sr</pip:name>
+			<pip:description>host</pip:description>
+		</pip:argument>	
+		<pip:argument id="user" >
+			<pip:name>u</pip:name>
+			<pip:description>user</pip:description>
+		</pip:argument>	
+		<pip:argument id="password" >
+			<pip:name>pa</pip:name>
+			<pip:description>password</pip:description>
+		</pip:argument>	
+		<pip:argument id="project" >
+			<pip:name>pr</pip:name>
+			<pip:description>project</pip:description>
+		</pip:argument>	
+		<pip:argument id="subject" >
+			<pip:name>subj</pip:name>
+			<pip:description>subject</pip:description>
+		</pip:argument>	
+		<pip:argument id="scan" >
+			<pip:name>s</pip:name>
+			<pip:description>scan ID</pip:description>
+		</pip:argument>
+		<pip:argument id="type" >
+			<pip:name>st</pip:name>
+			<pip:description>scan type (can be specified instead of scan ID)</pip:description>		
+		</pip:argument>
+	</pip:input>
+</pip:Resource>

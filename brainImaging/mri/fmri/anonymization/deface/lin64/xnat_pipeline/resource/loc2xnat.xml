@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pip:Resource xmlns:pip="http://nrg.wustl.edu/pipeline">
+	<pip:name>loc2xnat</pip:name>
+	<pip:location>/home/shared/NRG/mmilch/script</pip:location>
+	<pip:type>Executable</pip:type>
+	<pip:description>Compress and upload resources or scans to XNAT.</pip:description>
+	<pip:estimated_time>00:00:20</pip:estimated_time>
+	<pip:input>
+		<pip:argument id="session" >
+			<pip:description>Session label</pip:description>
+		</pip:argument>
+		<pip:argument id="directory" >
+			<pip:description>Local directory to compress and upload</pip:description>
+		</pip:argument>
+		<pip:argument id="mode" >
+			<pip:description>Upload mode (r(esourse) or d(ICOM))</pip:description>
+		</pip:argument>
+		<pip:argument id="host" >
+			<pip:name>sr</pip:name>
+			<pip:description>host</pip:description>
+		</pip:argument>	
+		<pip:argument id="user" >
+			<pip:name>u</pip:name>
+			<pip:description>user</pip:description>
+		</pip:argument>	
+		<pip:argument id="password" >
+			<pip:name>pa</pip:name>
+			<pip:description>password</pip:description>
+		</pip:argument>	
+		<pip:argument id="project" >
+			<pip:name>pr</pip:name>
+			<pip:description>project</pip:description>
+		</pip:argument>	
+		<pip:argument id="subject" >
+			<pip:name>subj</pip:name>
+			<pip:description>subject</pip:description>
+		</pip:argument>	
+		<pip:argument id="dir" >
+			<pip:name>r</pip:name>
+			<pip:description>resource directory to upload to</pip:description>
+		</pip:argument>
+	</pip:input>
+</pip:Resource>

@@ -1,0 +1,45 @@
+%This configuration file is read by roisignallevel.m
+%
+%__________________________________________________________________________
+% 2009-2010 Stanford Cognitive and Systems Neuroscience Laboratory
+%
+% $Id: roisignallevel_config.m.template, Kaustubh Supekar, 2018-03-16 $
+% -------------------------------------------------------------------------
+
+%-Please specify parallel or nonparallel
+paralist.parallel = '0';
+
+%-Subject list
+paralist.subjectlist = '/oak/stanford/groups/menon/scsnlscripts/brainImaging/mri/fmri/preprocessing/spm8/fmrisubjectlist.csv';
+
+%-Run list
+paralist.runlist = '/oak/stanford/groups/menon/scsnlscripts/brainImaging/mri/fmri/preprocessing/spm8/runlist.txt'; 
+
+% I/O parameters
+% - Raw data directory
+paralist.rawdatadir = '/oak/stanford/groups/menon/rawdata/scsnl/';
+
+% - Project directory
+paralist.projectdir = '/oak/stanford/groups/menon/projects/shelbyka/2017_TD_MD_mathfun/';
+
+% Please specify the folder containing SPM analysis results
+paralist.stats_folder    = 'comparisondot_swgcar_test0315';
+
+% ROI parameters
+% Please specify the folder (full path) holding defined ROIs
+paralist.roi_folder    = '/oak/stanford/groups/menon/projects/shelbyka/2017_TD_MD_mathfun/data/imaging/roi/';
+
+% Please specify the folder name to hold saved roi statistics
+% You can change it to different studies or settings
+paralist.roiresult_folder = 'roi_stats';
+
+% Please specify roi list file (with file name extensions)
+paralist.roilist = '/oak/stanford/groups/menon/projects/shelbyka/2017_TD_MD_mathfun/data/imaging/roi/roilist.txt';
+
+% Please specify the t statistic threshold
+paralist.tscorethreshold = 2.33;
+
+%-SPM version
+paralist.spmversion = 'spm8';
+
+%--------------------------------------------------------------------------

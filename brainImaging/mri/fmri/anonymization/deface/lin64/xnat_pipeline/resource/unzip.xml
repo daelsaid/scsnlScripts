@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pip:Resource xmlns:pip="http://nrg.wustl.edu/pipeline">
+	<pip:name>unzip</pip:name>
+	<pip:location>/usr/bin/unzip</pip:location>
+	<pip:type>Executable</pip:type>
+	<pip:description>Unzip a .zip file</pip:description>
+	<pip:estimated_time>0</pip:estimated_time>
+	<pip:input>
+		<pip:argument id="input"/>
+	</pip:input>
+</pip:Resource>

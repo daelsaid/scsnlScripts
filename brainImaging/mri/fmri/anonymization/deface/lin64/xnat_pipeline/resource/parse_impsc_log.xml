@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pip:Resource xmlns:pip="http://nrg.wustl.edu/pipeline">
+	<pip:name>parse_impsc_log</pip:name>
+	<pip:location>/home/shared/NRG/mmilch/script</pip:location>
+	<pip:type>Executable</pip:type>
+	<pip:description>parse import session log file.</pip:description>
+	<pip:estimated_time>0</pip:estimated_time>	
+	<pip:input>
+		<pip:argument id="log_dir">
+			<pip:description>directory with log files.</pip:description>
+		</pip:argument>
+		<pip:argument id="redirect_stdout"/>
+			<pip:name>></pip:name>
+			<pip:description>redirect standard output</pip:description>
+		</pip:argument>
+	</pip:input>
+</pip:Resource>

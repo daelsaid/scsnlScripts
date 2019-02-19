@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pip:Resource xmlns:pip="http://nrg.wustl.edu/pipeline">
+	<pip:name>mask_face</pip:name>
+	<pip:location>/home/shared/NRG/mmilch/script</pip:location>
+	<pip:type>Executable</pip:type>
+	<!--
+	<pip:commandPrefix>source /nrgpackages/tools/HCP/scripts/maskface_setup.sh; qsub -q *@@nrglab,moremem.q -sync yes -S /bin/bash -V </pip:commandPrefix>
+	-->
+	<pip:commandPrefix>source /home/shared/NRG/mmilch/script/maskface_setup.sh;</pip:commandPrefix>
+	<pip:description>Generates a face masked DICOM version from a hi-res head MRI scan</pip:description>
+	<pip:estimated_time>00:10:00</pip:estimated_time>
+	<pip:input>
+		<pip:argument id="input"/>
+		<pip:argument id="output" >
+	        	<pip:name>o</pip:name>
+			<pip:description>Output DICOM Folder</pip:description>
+		</pip:argument>
+		<pip:argument id="zip" >
+			<pip:name>z</pip:name>
+			<pip:description>Create zipped archive of DICOM folder</pip:description>
+		</pip:argument>
+		<pip:argument id="label">
+			<pip:name>p</pip:name>
+			<pip:description>Filename prefix of Analyze output (has to be present if different from input folder)</pip:description>
+		</pip:argument>
+		<pip:argument id="bet">
+		<pip:name>b</pip:name>
+		<pip:description>Set to 1 to generate an exclusion brain mask</pip:description>
+		</pip:argument>
+		<pip:argument id="ears">
+		<pip:name>e</pip:name>
+		<pip:description>Set to 1 to mask ears</pip:description>
+		</pip:argument>
+		<pip:argument id="gc">
+			<pip:name>s</pip:name>
+			<pip:description>Multiplicative invasiveness coefficient. 1.0 is default. Decrease/increase slightly to control the degree of defacing and depth of voxel alteration.</pip:description>
+		</pip:argument>
+		<pip:argument id="threshold">
+			<pip:name>t</pip:name>
+			<pip:description>Background-object intensity threshold. Set to -1 for automatic threshold.</pip:description>
+		</pip:argument>
+
+		<pip:argument id="ref">
+			<pip:name>r</pip:name>
+			<pip:description>reference scan to coregister all others to it. All ROI's are based on reference scan.</pip:description>
+		</pip:argument>
+		<pip:argument id="use_manual_roi">
+			<pip:name>um</pip:name>
+			<pip:description>Tells the pipeline whether to use manual ROI.</pip:description>
+		</pip:argument>
+		<pip:argument id="rois">
+			<pip:name>roi</pip:name>
+			<pip:description>Manual ROI(s) to mask in the reference space. Format: x0,y0,z0-x1,y1,z1. Use "_" delimiter for multiple ROI(s). Cuboid ROI is defined by the outer vertex P0=x0,y0,z0, "above" the surface, and vertex P1, diagonal from P0, "below" the surface. The outer vertex must precede the inner one in a ROI definition.</pip:description>
+		</pip:argument>
+		<pip:argument id="dirs">
+			<pip:name>ver</pip:name>
+			<pip:description>Comma-separated direction(s) for the manual ROI(s), one direction per ROI. 0 - left/right, 1 - top/bottom, 2 - near/far. </pip:description>
+		</pip:argument>		
+	</pip:input>
+</pip:Resource>
