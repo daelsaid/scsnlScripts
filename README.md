@@ -10,38 +10,34 @@ https://asconfluence.stanford.edu/confluence/display/MENON/Data+Analysis
 
 COPY all config files to personal projects before editing them
 
-# Problems contact ruiyuan@stanford.edu,yuanzh@stanford.edu,ksupekar@stanford.edu,wdcai@stanford.edu
+## Problems 
+contact ruiyuan@stanford.edu,yuanzh@stanford.edu,ksupekar@stanford.edu,wdcai@stanford.edu
 
 # Structure:
 
-brainImaging
-  
-  eeg
-  mri
-    
-    fmri
-    dmri
-    smri
-      
-brainModeling
-  
-  nengo
-  tvb	
+```
+.
+├── brainImaging
+│   ├── eeg
+│   └── mri
+├── brainModeling
+│   ├── nengo
+│   └── tvb
+├── cognitiveModeling
+│   ├── hddm
+│   └── numericalCognition
 
-cognitiveModeling
-  
-  hddm  
-  numericalCognition
-    
-    cnn  
-    lens  
+└── utilities
+    ├── aliases
+    ├── dataBackup
+    ├── dataOrganization
+    ├── github
+    ├── groupMatch
+    ├── mlsubmit
+    ├── pysubmit
+    ├── rc
+    ├── singularity
+    ├── startproject
+    └── statsR
 
-utilites
-  
-  dataOrganization  
-  github  
-  mlsubmit  
-  pysubmit  
-  singularity  
-  startproject  
-  statsR
+```
