@@ -400,6 +400,7 @@ for sess = 1:numsess
     %      nscans       = size(files,1);            
     %    case 'nii'
           nifti_file = spm_select('ExtFPList', datadir, ['^',pipeline,'I.nii']);
+          nifti_file
           V       = spm_vol(deblank(nifti_file));
           %nframes = V(1).private.dat.dim(4);
           nframes = length(V);
@@ -407,7 +408,7 @@ for sess = 1:numsess
           nscans = size(files,1);
           clear nifti_file V nframes;
     %  end
-  
+  files 
   matlabbatch{1}.spm.stats.fmri_spec.sess(sess) = matlabbatch{1}.spm.stats.fmri_spec.sess(1);
   matlabbatch{1}.spm.stats.fmri_spec.sess(sess).scans = {};
 

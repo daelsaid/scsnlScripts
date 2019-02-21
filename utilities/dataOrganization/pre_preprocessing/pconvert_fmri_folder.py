@@ -9,7 +9,7 @@ from os.path import join as pjoin
 from subprocess import call
 
 rawdata = '/oak/stanford/groups/menon/rawdata/scsnl/'
-fmri_path = rawdata+'/7877/visit2/session1/fmri/' #just fmri path not run path it will do each run on its own!!!!
+fmri_path = rawdata+'/7982/visit2/session1/fmri/' #just fmri path not run path it will do each run on its own!!!!
 
 delete_Pfiles = False
 # If H&W, set num_unused to 2

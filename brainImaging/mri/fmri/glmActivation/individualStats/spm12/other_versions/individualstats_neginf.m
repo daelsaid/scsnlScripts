@@ -235,8 +235,8 @@ for subcnt = 1:numsub
       return;
     end
     %--------- Unzip files if needed
-    system(sprintf('gunzip -fq %s', fullfile(run_img_dir,[pipeline, 'I.nii.gz'])));
-
+    %system(sprintf('gunzip -fq %s', fullfile(run_img_dir,[pipeline, 'I.nii.gz'])));
+    system(sprintf('gunzip  %s', fullfile(run_img_dir,[pipeline, 'I.nii.gz'])));
     %-------- Update the design with the movement covariates
     if(include_mvmnt == 1)       
       %load task_design
