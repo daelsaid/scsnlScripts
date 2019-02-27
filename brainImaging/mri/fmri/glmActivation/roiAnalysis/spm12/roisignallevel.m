@@ -4,10 +4,14 @@ function roisignallevel(ConfigFile)
 spm_version             = 'spm12';
 software_path           = '/oak/stanford/groups/menon/toolboxes/';
 spm_path                = fullfile(software_path, spm_version);
+%L. Chen added in this line for marsbar to be added, could be changed if the location is moved
+marsbar_path            = '/oak/stanford/groups/menon/toolboxes/marsbar-0.44/';
 spmroiscript_path    = ['/oak/stanford/groups/menon/scsnlscripts/brainImaging/mri/fmri/glmActivation/roiAnalysis/' spm_version];
 
 sprintf('adding SPM path: %s\n', spm_path);
 addpath(genpath(spm_path));
+%L. Chen added in this line
+addpath(genpath(marsbar_path));
 sprintf('adding SPM based roianalysis scripts path: %s\n', spmroiscript_path);
 addpath(genpath(spmroiscript_path));
 

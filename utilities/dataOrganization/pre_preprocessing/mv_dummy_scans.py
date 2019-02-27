@@ -9,7 +9,7 @@ import os
 
 ### EDIT THESE TWO LINES ###
 
-path = '/oak/stanford/groups/menon/rawdata/scsnl/9302/visit2/session1/fmri/sym1_redo/unnormalized'# Full path to unnormalized folder containing I.nii.gz file
+path = '/oak/stanford/groups/menon/rawdata/scsnl/9182/visit1/session1/fmri/sym1/unnormalized'# Full path to unnormalized folder containing I.nii.gz file
 num_unused = 16
 
 ###   STOP EDITING    ####

@@ -296,6 +296,8 @@ for scanid_list in downloaded_scanids:
 		for file in files:
 			if file == 'I.nii.gz':
 				# splitting 4-D to 3-Ds
+				if 'pepolar' in root:  #These files dont have dummy scans
+					continue
 				if not os.path.exists(pjoin(root,'unused')):
 					os.makedirs(pjoin(root,'unused'),exist_ok=True)
 				print('splitting nifti %s'%pjoin(root,file))
