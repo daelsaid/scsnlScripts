@@ -167,10 +167,10 @@ for concnt = 1:numcontrast
   count = 1;
   for statscnt = 1:num_stats
     for subcnt = 1:numsubj
-      %ConImage{count} = spm_select('FPList', stats_dir{statscnt, subcnt}, ...
-%                                   ['^', ['con_',sprintf('%04d',concnt)], '.*\.nii']);
+      ConImage{count} = spm_select('FPList', stats_dir{statscnt, subcnt}, ...
+                                   ['^', ['con_',sprintf('%04d',concnt)], '.*\.nii']);
 
-      ConImage{count} = spm_select('FPList', stats_dir{statscnt, subcnt}, ['con_000',num2str(concnt),'.img$']);
+      %ConImage{count} = spm_select('FPList', stats_dir{statscnt, subcnt}, ['con_000',num2str(concnt),'.img$']);
 
       if isempty(ConImage{count})
         fprintf('Cannot find contrast file: %s in %s \n', sprintf('%04d',concnt), ...

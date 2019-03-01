@@ -88,7 +88,8 @@ for k = 1:length(stats_folder_list)
         %subdir = fullfile(participant_path, year_id, subjects{subcnt}, ...
         %  'fmri', 'stats_spm8', stats_folder{1});
         subject           = subjectlist(subject_i);
-        subject           = char(pad(string(subject),2,'left','0'));
+        %  subject           = char(pad(string(subject),2,'left','0'));
+        subject = char(pad(string(subject),4,'left','0'));        
         visit             = num2str(subjectlist(subject_i,2));
         session           = num2str(subjectlist(subject_i,3));
         
