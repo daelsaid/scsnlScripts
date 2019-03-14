@@ -44,3 +44,4 @@ Thumbs.db
 utilities/dataOrganization/flywheel/logs/
 utilities/singularity/quality_check_poldrack.img
 utilities/dataOrganization/permissions/db_export/
+brainImaging/mri/smri/atlases/

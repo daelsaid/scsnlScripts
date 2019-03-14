@@ -25,6 +25,8 @@ for pid in pids:
 	for visit in visits:
 		sessions = os.listdir(pjoin(rawdata_root,pid,visit))
 		for session in sessions:
+			if session == 'assessments':
+				continue
 			sessnum = session[-1]
 			visitnum = visit[-1]
 			scanid = pid+'_'+visitnum+'_'+sessnum

@@ -230,7 +230,7 @@ then
 	#################
 	#read subjects list
 	count=0
-	while IFS=, read -r subj visit sess
+	while IFS=, read -r subj visit sess extra
 	do
     		subject[$count]=$(echo PID-$subj'_visit'$visit'_session'$sess)
     		echo ${subject[$count]}
@@ -249,9 +249,9 @@ then
 	do
     		echo ${subject[$subjnum]}
 
-    		echo 'Submitting job for Subject' ${subject[$subjnum]%?}
-    		JOBOUTPUT=$(echo $projectdir'/Jobs/'${mlscriptname}-${spmver}-%j'_'${subject[$subjnum]%?}'.out')
-    		JOBERROR=$(echo $projectdir'/Jobs/'${mlscriptname}-${spmver}-%j'_'${subject[$subjnum]%?}'.err')
+    		echo 'Submitting job for Subject' ${subject[$subjnum]}
+    		JOBOUTPUT=$(echo $projectdir'/Jobs/'${mlscriptname}-${spmver}-%j'_'${subject[$subjnum]}'.out')
+    		JOBERROR=$(echo $projectdir'/Jobs/'${mlscriptname}-${spmver}-%j'_'${subject[$subjnum]}'.err')
 
     		echo 'Saving job output to ' $JOBOUTPUT' and '$JOBERROR
     		sbatch -J $JOBNAME -o $JOBOUTPUT -e $JOBERROR -t $JOBTIME --mem-per-cpu=$JOBMEM -p $JOBPARTITION --wrap="matlab -nosplash -noFigureWindows -nodisplay -r $'addpath(\'$scriptdir\'); which $mlscriptfile; $mlscriptname($i,\'$mlconfigfullfile\'); exit;'"    		

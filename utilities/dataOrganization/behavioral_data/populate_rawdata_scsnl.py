@@ -58,4 +58,4 @@ for pid in pids:
 				if not os.path.exists(pjoin(root,file).replace(pjoin(tree1,pid,visit),pjoin(tree2,pid,visit,'assessments'))):
 					print(root.replace(pjoin(tree1,pid,visit),pjoin(tree2,pid,visit,'assessments')))
 					os.makedirs(root.replace(pjoin(tree1,pid,visit),pjoin(tree2,pid,visit,'assessments')),exist_ok=True)
-					call('cp -p %s %s'%(pjoin(clean_punctuation(root),clean_punctuation(file)),root.replace(pjoin(tree1,pid,visit),pjoin(tree2,pid,visit,'assessments'))),shell=True)
+					call('cp -p %s %s'%(pjoin(clean_punctuation(root),clean_punctuation(file)),clean_punctuation(root.replace(pjoin(tree1,pid,visit),pjoin(tree2,pid,visit,'assessments')))),shell=True)
