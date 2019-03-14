@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# original code base by John Nichola
+# edited by Carlo de los Angeles
+
 # Import required modules
 import os
 import argparse
@@ -7,6 +10,8 @@ import commands
 import ICA_AROMA_functions as aromafunc
 import shutil
 from subprocess import call
+from glob import glob
+
 # Change to script directory
 cwd = os.path.realpath(os.path.curdir)
 scriptDir = os.path.dirname(os.path.abspath(__file__))
@@ -18,14 +23,14 @@ os.environ["FSLOUTPUTTYPE"]="NIFTI_GZ"
 
 parser = argparse.ArgumentParser(description='Script to run ICA-AROMA v0.3 beta (\'ICA-based Automatic Removal Of Motion Artifacts\') on fMRI data. See the companion manual for further information.')
 
-# Required options                    
+# Required options
 reqoptions = parser.add_argument_group('Required arguments')
 reqoptions.add_argument('-o', '-out', dest="outDir", required=True, help='Output directory name' )
 
 # Required options in non-Feat mode
 nonfeatoptions = parser.add_argument_group('Required arguments - generic mode')
 nonfeatoptions.add_argument('-i', '-in',dest="inFile", required=False, help='Input file name of fMRI data (.nii.gz)')
-nonfeatoptions.add_argument('-mc', dest="mc", required=False, help='File name of the warp-file describing the non-linear registration (e.g., FSL FNIRT) of the structural data to MNI152 space (.nii.gz). (e.g., /home/user/PROJECT/SUBJECT.feat/mc/prefiltered_func_data_mcf.par')
+nonfeatoptions.add_argument('-mc', dest="mc", required=False, help='File name of the motion parameters calculated from realignment (e.g., /home/user/PROJECT/SUBJECT.feat/mc/prefiltered_func_data_mcf.par')
 nonfeatoptions.add_argument('-a','-affmat', dest="affmat", default="", help='File name of the mat-file describing the affine registration (e.g., FSL FLIRT) of the functional data to structural space (.mat file). (e.g., /home/user/PROJECT/SUBJECT.feat/reg/example_func2highres.mat')
 nonfeatoptions.add_argument('-w','-warp', dest="warp", default="", help='File name of the warp-file describing the non-linear registration (e.g., FSL FNIRT) of the structural data to MNI152 space (.nii.gz). (e.g., /home/user/PROJECT/SUBJECT.feat/reg/highres2standard_warp.nii.gz')
 nonfeatoptions.add_argument('-m','-mask', dest="mask", default="", help='File name of the mask to be used for MELODIC (denoising will be performed on the original/non-masked input data)')
@@ -54,7 +59,7 @@ if args.inFeat:
 	inFeat = args.inFeat
 
 	# Check whether the Feat directory exists
-	if not os.path.isdir(inFeat): 
+	if not os.path.isdir(inFeat):
 		print('The specified Feat directory does not exist.')
 		print('\n----------------------------- ICA-AROMA IS CANCELED -----------------------------\n')
 		exit()
@@ -66,23 +71,23 @@ if args.inFeat:
 	warp = os.path.join(args.inFeat,'reg','highres2standard_warp.nii.gz')
 
 	# Check whether these files actually exist
-	if not os.path.isfile(inFile): 
+	if not os.path.isfile(inFile):
 		print('Missing filtered_func_data.nii.gz in Feat directory.')
 		cancel=True
-	if not os.path.isfile(mc): 
+	if not os.path.isfile(mc):
 		print('Missing mc/prefiltered_func_data_mcf.mat in Feat directory.')
 		cancel=True
-	if not os.path.isfile(affmat): 
+	if not os.path.isfile(affmat):
 		print('Missing reg/example_func2highres.mat in Feat directory.')
 		cancel=True
-	if not os.path.isfile(warp): 
+	if not os.path.isfile(warp):
 		print('Missing reg/highres2standard_warp.nii.gz in Feat directory.')
 		cancel=True
-	
+
 	# Check whether a melodic.ica directory exists
 	if os.path.isdir(os.path.join(args.inFeat,'filtered_func_data.ica')):
 		melDir = os.path.join(args.inFeat,'filtered_func_data.ica')
-	else: 
+	else:
 		melDir=args.melDir
 else:
 	inFile = args.inFile
@@ -95,21 +100,21 @@ else:
 	if not inFile:
 		print('No input file specified.')
 	else:
-		if not os.path.isfile(inFile): 
+		if not os.path.isfile(inFile):
 			print('The specified input file does not exist.')
 			cancel=True
 	if not mc:
 		print('No mc file specified.')
 	else:
-		if not os.path.isfile(mc): 
+		if not os.path.isfile(mc):
 			print('The specified mc file does does not exist.')
 			cancel=True
 	if affmat:
-		if not os.path.isfile(affmat): 
+		if not os.path.isfile(affmat):
 			print('The specified affmat file does not exist.')
 			cancel=True
 	if warp:
-		if not os.path.isfile(warp): 
+		if not os.path.isfile(warp):
 			print('The specified warp file does not exist.')
 			cancel=True
 
@@ -147,8 +152,8 @@ if not os.path.isdir(outDir):
 if args.TR:
 	TR = args.TR
 else:
-	cmd = ' '.join([os.path.join(fslDir,'fslinfo'), 
-		inFile, 
+	cmd = ' '.join([os.path.join(fslDir,'fslinfo'),
+		inFile,
 		'| grep pixdim4 | awk \'{print $2}\''])
 	TR=float(commands.getoutput(cmd))
 
@@ -166,11 +171,11 @@ else:
 	# If a Feat directory is specified, and an example_func is present use example_func to create a mask
 	if args.inFeat and os.path.isfile(os.path.join(inFeat,'example_func.nii.gz')):
 		os.system(' '.join([os.path.join(fslDir,'bet'),
-			os.path.join(inFeat,'example_func.nii.gz'), 
+			os.path.join(inFeat,'example_func.nii.gz'),
 			os.path.join(outDir,'bet'),
 			'-f 0.3 -n -m -R']))
 		os.system(' '.join(['mv',
-			os.path.join(outDir,'bet_mask.nii.gz'), 
+			os.path.join(outDir,'bet_mask.nii.gz'),
 			mask]))
 		if os.path.isfile(os.path.join(outDir,'bet.nii.gz')):
 			os.remove(os.path.join(outDir,'bet.nii.gz'))
@@ -211,6 +216,16 @@ motionICs = aromafunc.classification(outDir, maxRPcorr, edgeFract, HFC, csfFract
 if (denType != 'no'):
 	print('Step 3) Data denoising')
 	aromafunc.denoising(fslDir, inFile, outDir, melmix, denType, motionICs)
+
+# move output outDir into a sub directory directory
+toMove=sorted(glob(os.path.join(outDir,'*')))
+os.mkdir(os.path.join(outDir,'aroma'))
+for file in toMove:
+    shutil.move(file,os.path.join(outDir,'aroma'))
+
+#make symlinks of the denoised data and the realignment parameters
+os.symlink(mc,os.path.join(outDir,os.path.basename(mc)))
+os.symlink(os.path.join(outDir,'aroma','denoised_func_data_'+denType+'.nii.gz'),os.path.join(outDir,'aroma_'+os.path.basename(inFile)))
 
 # Remove thresholded melodic_IC file
 os.remove(melIC)
