@@ -11,7 +11,7 @@ https://asconfluence.stanford.edu/confluence/display/MENON/Data+Analysis
 COPY all config files to personal projects before editing them
 
 ## Problems 
-contact ruiyuan@stanford.edu,yuanzh@stanford.edu,ksupekar@stanford.edu,wdcai@stanford.edu
+contact ruiyuan@stanford.edu,yuanzh@stanford.edu,ksupekar@stanford.edu,wdcai@stanford.edu,cdla@stanford.edu
 
 # Structure:
 
