@@ -2,7 +2,7 @@
 
 Welcome to the repo containing all standard Stanford Cognitive Systems Lab scripts! Our primary scripting language is matlab, and all scripts are currently working and executable for matlab 2017a/b on Sherlock 2.0 (Stanford HPC).
 
-# Best Practices:
+## Best Practices:
 
 If you would like to run a script, do so through the mlsubmit system.
 
@@ -13,6 +13,8 @@ COPY all config files to personal projects before editing them
 ## Problems 
 contact ruiyuan@stanford.edu,yuanzh@stanford.edu,ksupekar@stanford.edu,wdcai@stanford.edu,cdla@stanford.edu
 
+## Changes
+commits are automatically reported to the #scsnlscripts channel on slack
 # Structure:
 
 ```
