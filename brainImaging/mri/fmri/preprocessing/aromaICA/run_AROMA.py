@@ -21,6 +21,7 @@ def ReadSubjectList(filename):
     subjectIDs = f.read()
     f.close()
     subjectList = [ subj.split(',') for subj in subjectIDs.split()[1:] ]
+    subjectList = [ [subj[0].rjust(4,'0'),subj[1],subj[2]] for subj in subjectList ]
   except Exception, e:
     print str(e)
   return subjectList
