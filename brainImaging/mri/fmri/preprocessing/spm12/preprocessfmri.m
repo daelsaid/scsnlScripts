@@ -64,7 +64,7 @@ output_folder      = strtrim(config.outputdirname);
 
 try
     SPGRfilename   = strtrim(config.spgrfilename);
-catch e
+catch 
     SPGRfilename   = 'spgr';
 end
 
