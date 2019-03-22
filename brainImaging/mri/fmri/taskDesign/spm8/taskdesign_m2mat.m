@@ -11,7 +11,7 @@ function taskdesign_m2mat(SubjectI, ConfigFile)
 
 % Utility functions are saved under preprocessing path 
 spmpreprocscript_path   = '/oak/stanford/groups/menon/scsnlscripts/brainImaging/mri/fmri/preprocessing/spm8/';
-% sprintf('adding SPM based preprocessing scripts path: %s\n', spmpreprocscript_path);
+sprintf('adding SPM based preprocessing scripts path: %s\n', spmpreprocscript_path);
 addpath(genpath(spmpreprocscript_path));
 
 warning('off', 'MATLAB:FINITE:obsoleteFunction')
@@ -39,18 +39,6 @@ end
 [ConfigFilePath, ConfigFile, ConfigFileExt] = fileparts(ConfigFile);
 eval(ConfigFile);
 clear ConfigFile;
-
-% container
-spm_version             = strtrim(paralist.spmversion);
-software_path           = '/oak/stanford/groups/menon/toolboxes/';
-spm_path                = fullfile(software_path, spm_version);
-spmscript_path   = ['/oak/stanford/groups/menon/scsnlscripts/brainImaging/mri/fmri/taskDesign/' spm_version];
-
-sprintf('adding SPM path: %s\n', spm_path);
-addpath(genpath(spm_path));
-sprintf('adding SPM based task design scripts path: %s\n', spmscript_path);
-addpath(genpath(spmscript_path));
-
 
 % -------------------------------------------------------------------------
 % Read parameters
@@ -91,10 +79,10 @@ for subcnt = 1:numsub
   
   for irun = 1:numrun
     taskdsgn_mdir = fullfile(raw_dir, subject, ['visit',visit],['session',session],'fmri', runs{irun}, 'task_design');
-    
-    if( exist(taskdsgn_mdir, 'dir') == 0) 
-        continue; 
-    end 
+
+    if( exist(taskdsgn_mdir, 'dir') == 0)  
+        continue;  
+    end
 
     addpath(taskdsgn_mdir);
     str = which(task_dsgn); % check if there is task design m file
