@@ -17,7 +17,7 @@ function preprocessfmri_unwarp(run_name,subj_prefix,subject,visit,session,temp_d
     pepolar_nii	       = fullfile(temp_dir,[subj_prefix,'_rev.nii']);
 
     copyfile(pepolar_orig_nii,pepolar_gzipnii);
-    unix(sprintf('gunzip %s', pepolar_gzipnii));
+    system(sprintf('gunzip %s', pepolar_gzipnii));
     copyfile(func_nii,temp_nii);
 
     if ~exist(pepolar_dir, 'dir')
