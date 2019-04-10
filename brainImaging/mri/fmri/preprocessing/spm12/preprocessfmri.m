@@ -76,7 +76,7 @@ end
 data_type          = 'nii';
 SPGR_folder        = 'anatomical';
 unnorm_folder      = 'unnormalized';
-
+relative_imging_dir = fullfile(project_dir,'/data/imaging/participants/');
 disp('-------------- Contents of the Parameter List --------------------');
 disp(config);
 
