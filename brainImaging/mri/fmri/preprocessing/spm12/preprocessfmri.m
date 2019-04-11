@@ -76,7 +76,8 @@ end
 data_type          = 'nii';
 SPGR_folder        = 'anatomical';
 unnorm_folder      = 'unnormalized';
-relative_imging_dir = fullfile(project_dir,'/data/imaging/participants/');
+relative_imging_dir= fullfile(project_dir,'/data/imaging/participants/');
+
 disp('-------------- Contents of the Parameter List --------------------');
 disp(config);
 
@@ -93,7 +94,7 @@ if ~isfloat(TR)
   return;
 end
 
-if ismember('u', wholepipeline)
+if ismember('f', wholepipeline)
   flipflag = 1;
 else
   flipflag = 0;
@@ -158,15 +159,14 @@ delete(get(0, 'Children'));
 
 runcnt = 0;
 for isubj = 1:numsubj
-    
+
   fprintf('Processing subject: %s\n', subject);
   disp('--------------------------------------------------------------');
 
   %%%%--------- check anatomical folder image at output side --------
-
    SPGRdir = fullfile(project_dir, '/data/imaging/participants/', SPGRsubject, ['visit',SPGRvisit], ['session',SPGRsession], SPGR_folder);
      if ~exist(SPGRdir,'dir')
-     mkdir(SPGRdir);
+        mkdir(SPGRdir);
      end
 
    SPGRfile_file = '';
@@ -229,9 +229,7 @@ for isubj = 1:numsubj
     fullfile(data_dir, subject,['visit',visit],['session',session], 'fmri', runs{irun}) %remove
 
     if ~exist(totalrun_dir{runcnt}, 'dir')
-        
       fprintf('run directory not exists: %s\n', runs{irun});
-      
       continue;
     end
 
@@ -268,7 +266,6 @@ for isubj = 1:numsubj
     end
 
     %%%--------------- check output folder-------------------
-
     output_dir = fullfile(relative_imging_dir,subject,['visit',visit],['session',session],'fmri',runs{irun},output_folder);
     volrepairdir{runcnt} = temp_dir;
     output_dir %remove
@@ -277,7 +274,6 @@ for isubj = 1:numsubj
        mkdir(output_dir);
     else
      fprintf('>>> ---- the output folder exists----- \n ');
-
      system(sprintf('rm -rf %s',output_dir));
      mkdir(output_dir);
     end
@@ -294,9 +290,8 @@ for isubj = 1:numsubj
        end
 
        listfile_file = dir(fullfile(temp_dir, 'meanI*'));
-       
+
        if isempty(listfile_file)
-           
            error('Error: no meanI* image found when inputimgprefix is not empty');
        else
            meanimg_file = fullfile(temp_dir, listfile_file(1).name);
@@ -306,6 +301,7 @@ for isubj = 1:numsubj
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%  Main Section Start  %%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     prevprefix = inputimgprefix;
     nstep = length(pipeline);
 
@@ -317,54 +313,73 @@ for isubj = 1:numsubj
 
        %%%%%%--------------------------------------------------------------
        %%%%%%------------------------ unwarp ------------------------------
-       %%%%%%--------------------------------------------------------------
-       
+       %%%%%%--------------------------------------------------------------\
        case 'u'
-            listfile_file = dir(fullfile(temp_dir, [prevprefix, 'I.nii.gz']));
-            
+            [inputimg_file, selecterr] = preprocessfmri_selectfiles(temp_dir, prevprefix, data_type);
+
             run_name=runs{irun};
             subj_prefix=[subject,'_',visit,'_',session,'_',run_name];
 
+            %unwarp using pepolar as reference
+            preprocessfmri_unwarp(run_name,subj_prefix,subject,visit,session,temp_dir,project_dir);
+
+            %output paths and filenames
             unwarp_output_dir=fullfile(temp_dir,'unWarpOutput_TS');
+            unwarp_output_prefix='uI';
+            midwarped_img_prefix='meanI';
+
+            %unwarp output
             tmp_unwarp_output_nii=fullfile(unwarp_output_dir,['06_TS_',subj_prefix,'.nii_HWV.nii.gz']);
             tmp_unwarp_motparams=fullfile(unwarp_output_dir,['TS_',subj_prefix,'.nii_HWV.motion.1D']);
-            converted_unwarped_motparams=fullfile(temp_dir,'rp_I.txt');
-            
-            unwarp_output_nii=fullfile(temp_dir,'meanI.nii.gz');
-            unwarp_motparams=fullfile(temp_dir,'rp_I.txt');
+            tmp_midwarped_fwdimg=fullfile(unwarp_output_dir,['03_TS_MidWarped_Forward.nii.gz']);
 
-            preprocessfmri_unwarp(run_name,subj_prefix,subject,visit,session,temp_dir,project_dir);
-                
+            converted_unwarped_motparams=fullfile(temp_dir,'rp_I.txt');
+            unwarp_output_gzip_nii=fullfile(temp_dir,[unwarp_output_prefix,'.',data_type,'.gz']);
+            midwarped_img=fullfile(temp_dir,[midwarped_img_prefix,'.',data_type,'.gz']);
+
             if ~exist(unwarp_output_dir,'dir')
                 fprintf('No UnWarp output folder exists in scratch dir %s ..\n',temp_dir);
                 error('Cannot copy output files the configuration file');
             else
+%                 prevprefix='u';
                 system(sprintf('bash %s %s %s', fullfile(spmpreprocscript_path,'utils','unwarp_motionfile_convert.sh'),tmp_unwarp_motparams,output_dir));
 
-                copyfile(tmp_unwarp_output_nii,unwarp_output_nii);
+                copyfile(tmp_unwarp_output_nii,unwarp_output_gzip_nii);
+                copyfile(tmp_midwarped_fwdimg,midwarped_fwdimg);
+
+                %copy motion param file to ouput dir
                 copyfile(converted_unwarped_motparams,output_dir);
-                
-                listfile_file = dir(fullfile(temp_dir, ['mean', prevprefix, 'I.', data_type]));
+
+                %copy ref img to output dir
+                copyfile(midwarped_fwdimg,output_dir);
+
+                system(sprintf('gunzip %s',midwarped_fwdimg));
+                system(sprintf('gunzip %s',unwarp_output_gzip_nii));
+
+                listfile_file = dir(fullfile(temp_dir,[midwarped_img_prefix,'.',data_type]));
                 meanimg_file = fullfile(temp_dir, listfile_file(1).name);
 
-                p = fullfile(unwarp_output_nii);
+                p = fullfile(temp_dir,[unwarp_output_prefix,'.',data_type]);
                 vy = spm_vol(p);
                 numscan = length(vy);
-                
+
                 disp('calculating the global signals ...');
-                
                 fid = fopen(fullfile(output_dir, 'VolumRepair_GlobalSignal.txt'), 'w+');
+
                 for iscan = 1:numscan
                     fprintf(fid, '%.4f\n', spm_global(vy(iscan)));
                 end
+
                 fclose(fid);
+
             end
 
        %%%%%%---------------------------------------------------
        %%%%%%---------realign ----------------------------------
        %%%%%%---------------------------------------------------
+
         case 'r'
-          
+
             listfile_file = dir(fullfile(temp_dir, [prevprefix, 'I.nii.gz']));
             if ~isempty(listfile_file)
                 system(sprintf('gunzip -fq %s', fullfile(temp_dir, [prevprefix, 'I.nii.gz'])));
@@ -378,8 +393,8 @@ for isubj = 1:numsubj
             end
 
           %%%%----------- copy head motion file from tmp file to output dir -----
-          
               listfile_file = dir(fullfile(output_dir, ['rp_', prevprefix, 'I.txt.gz']));
+
               if ~isempty(listfile_file)
                   system(sprintf('gunzip -fq %', fullfile(output_dir, ['rp_', prevprefix, 'I.txt.gz'])));
               else
@@ -392,7 +407,6 @@ for isubj = 1:numsubj
               listfile_file = dir(fullfile(temp_dir, ['mean', prevprefix, 'I.', data_type]));
               meanimg_file = fullfile(temp_dir, listfile_file(1).name);
 
-              
               if strcmpi(data_type, 'img')
                 error('Error: IMG format is not supported. Please convert your files to 4D NIFTI format');
               else
@@ -401,25 +415,25 @@ for isubj = 1:numsubj
               vy = spm_vol(p);
               numscan = length(vy);
               disp('calculating the global signals ...');
-              
+
               fid = fopen(fullfile(output_dir, 'VolumRepair_GlobalSignal.txt'), 'w+');
-              
+
               for iscan = 1:numscan
                 fprintf(fid, '%.4f\n', spm_global(vy(iscan)));
               end
-              
+
               fclose(fid);
-              
+
       %%%%%%---------------------------------------------------
       %%%%%%---------Volume Repair-----------------------------
       %%%%%%---------------------------------------------------
-        
+
        case 'v'
               volflag = preprocessfmri_VolRepair(temp_dir, data_type, prevprefix);
               volrepairflag(runcnt) = volflag;
               nifti3Dto4D(temp_dir, prevprefix);
               system(sprintf('gunzip -fq %s', fullfile(temp_dir, ['v', prevprefix, 'I.nii.gz'])));
-              
+
               if volflag == 1
                   disp('Skipping Art_Global (v) step ...');
                   break;
@@ -431,8 +445,8 @@ for isubj = 1:numsubj
 
       %%%%%%---------------------------------------------------
       %%%%%%---------Volume Repair Version O-------------------
-      %%%%%%---------------------------------------------------     
-          
+      %%%%%%---------------------------------------------------
+
          case 'o'
           volflag = preprocessfmri_VolRepair_OVersion(temp_dir, data_type, prevprefix);
           volrepairflag(runcnt) = volflag;
@@ -442,7 +456,7 @@ for isubj = 1:numsubj
 
           if volflag == 1
             disp('Skipping Art_Global (o) step ...');
-            
+
             break;
           else
             system(sprintf('mv -f %s %s', fullfile(temp_dir, 'art_deweighted.txt'), fullfile(output_dir, 'art_deweighted_o.txt')));
@@ -452,15 +466,16 @@ for isubj = 1:numsubj
 
       %%%%%%---------------------------------------------------
       %%%%%%---------Flip Z direction  ------------------------
-      %%%%%%---------------------------------------------------     
+      %%%%%%---------------------------------------------------
+
         case 'f'
           preprocessfmri_FlipZ(temp_dir, prevprefix);
-          
-          
+
+
       %%%%%%---------------------------------------------------
       %%%%%%--------- Slice timing correction -----------------
-      %%%%%%---------------------------------------------------     
-      
+      %%%%%%---------------------------------------------------
+
         case 'a'
           [inputimg_file, selecterr] = preprocessfmri_selectfiles(temp_dir, prevprefix, data_type);
           if selecterr == 1
@@ -470,8 +485,8 @@ for isubj = 1:numsubj
 
       %%%%%%---------------------------------------------------
       %%%%%%--------- Co-registration  ------------------------
-      %%%%%%---------------------------------------------------         
-          
+      %%%%%%---------------------------------------------------
+
         case 'c'
           [inputimg_file, selecterr] = preprocessfmri_selectfiles(temp_dir, prevprefix, data_type);
           if selecterr == 1
@@ -482,8 +497,8 @@ for isubj = 1:numsubj
 
       %%%%%%---------------------------------------------------
       %%%%%%--------- Normalization  ------------------------
-      %%%%%%---------------------------------------------------        
-             
+      %%%%%%---------------------------------------------------
+
         case 'w'
 
           if strcmp(spm_version, 'spm12')
@@ -491,7 +506,7 @@ for isubj = 1:numsubj
           else
               error('Error: please specify spm_version as spm12');
           end
-         
+
           [inputimg_file, selecterr] = preprocessfmri_selectfiles(temp_dir, prevprefix, data_type);
           if selecterr == 1
             error('Error: no scans selected');
@@ -501,8 +516,8 @@ for isubj = 1:numsubj
        %%%%%%---------------------------------------------------
        %%%%%%--------- Segmentation check  ---------------------
        %%%%%%--segmentation run by other script ----------------
-       %%%%%%---------------------------------------------------     
-          
+       %%%%%%---------------------------------------------------
+
         case 'g'
 
           listfile_file = dir(fullfile(SPGRdir, ['seg' ,'_', spm_version],[ 'y_',SPGRfilename,'.nii']));
@@ -515,17 +530,17 @@ for isubj = 1:numsubj
 
                %%% --- copy y_*.nii to tmp file
               system(sprintf('cp -af %s %s',fullfile(SPGRdir, ['seg' '_' spm_version], listfile_file(1).name),temp_dir));
-              
+
                %%% --- copy arI.nii to tmp file as garI.nii
               listfile_file = dir(fullfile(temp_dir, [prevprefix, 'I.nii']));
               system(sprintf('cp -af %s %s', fullfile(temp_dir, listfile_file(1).name), fullfile(temp_dir, ['g', listfile_file(1).name])));
-              
+
           end
 
      %%%%%%---------------------------------------------------
      %%%%%%----------------- Smoothing -----------------------
-     %%%%%%---------------------------------------------------         
-      
+     %%%%%%---------------------------------------------------
+
         case 's'
           [inputimg_file, selecterr] = preprocessfmri_selectfiles(temp_dir, prevprefix, data_type);
           if selecterr == 1
@@ -540,16 +555,16 @@ for isubj = 1:numsubj
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%%%%%  Main Section End  %%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
-    
-  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
      %%%%%%---------------------------------------------------
      %%%%%%-------Cleaning and copy output--------------------
-     %%%%%%---------------------------------------------------      
+     %%%%%%---------------------------------------------------
     if strcmp(prevprefix(1), 's')
-        
-         %%%%%%--------- delete intermediate images ------------------ 
-         
+
+         %%%%%%--------- delete intermediate images ------------------
+
             for iinter = 2:length(prevprefix)
                 interprefix = prevprefix(iinter:end);
                 listfile_file = dir(fullfile(temp_dir, [interprefix, 'I.nii']));
@@ -560,10 +575,10 @@ for isubj = 1:numsubj
             end
             system(sprintf('rm -rf %s', fullfile(temp_dir, '*.mat')));
 
-            
-      
-         %%%%%%--------- compresss and copy final images to output dir ------------ 
-          
+
+
+         %%%%%%--------- compresss and copy final images to output dir ------------
+
           system(sprintf('gzip -fq %s', fullfile(temp_dir, [prevprefix, 'I*.nii'])));
           system(sprintf('gzip -fq %s', fullfile(temp_dir, 'meanI*.nii')));
           system(sprintf('cp -af %s %s', fullfile(temp_dir, 'meanI*'), output_dir));
@@ -578,27 +593,26 @@ for isubj = 1:numsubj
           else
               system(sprintf('cp -af %s %s', fullfile(temp_dir, [prevprefix, 'I.nii.gz']), output_dir));
           end
-      
+
           system(sprintf('cp -af %s %s', fullfile(temp_dir, 'log', '*.mat'), fullfile(output_dir, 'log')));
-          
+
          %%%%%---------- mv *.nii to mirroring folder  in scratch partition -------------------------
-         
+
          div_project_dir = regexp(project_dir,filesep,'split');
-         div_project_dir
-         
+
          scratch_folder =  fullfile('/scratch/groups/menon/projects/',div_project_dir{end-2},div_project_dir{end-1},'/data/imaging/participants/',subject,['visit',visit],['session',session],'fmri', runs{irun});
          fprintf('scratch output folder is : \n %s \n ', scratch_folder);
          mkdir(scratch_folder,output_folder);
 
-         system(sprintf('mv -f  %s %s', fullfile(output_dir, [prevprefix, 'I.nii.gz']), fullfile(scratch_folder,output_folder)));          
-         system(sprintf('ln -sT %s %s ',fullfile(scratch_folder,output_folder,[prevprefix,'I.nii.gz']),fullfile(output_dir,[prevprefix,'I.nii.gz'])));          
+         system(sprintf('mv -f  %s %s', fullfile(output_dir, [prevprefix, 'I.nii.gz']), fullfile(scratch_folder,output_folder)));
+         system(sprintf('ln -sT %s %s ',fullfile(scratch_folder,output_folder,[prevprefix,'I.nii.gz']),fullfile(output_dir,[prevprefix,'I.nii.gz'])));
 
-         %%%%%--------completely deletet the tmp folder -------------------   
+         %%%%%--------completely deletet the tmp folder -------------------
          system(sprintf('rm -rf %s', temp_dir));
-          
-    end 
+
+    end
   end
-      
+
 end
 
 cd(currentdir);
@@ -614,5 +628,3 @@ delete(get(0, 'Children'));
 clear all;
 close all;
 disp('==================================================================');
-      
-       
